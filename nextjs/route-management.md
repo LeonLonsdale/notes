@@ -18,8 +18,6 @@
             page.tsx
 ```
 
-[Back to contents](#contents)
-
 ## Create a Dynamic Route
 
 - A dynamic route is when the text in part of the path may vary
@@ -38,22 +36,6 @@
                 page.tsx
 ```
 
-[Back to contents](#contents)
-
-## Custom 404 Not Found Response
-
-- Handled by default but can be customised by creation of a special component.
-- Create a file named `not-found.tsx` in the `app` dir
-- Create a component in this file. It's used automatically.
-
-```ts
-export default function NotFound() {
-  return <main>We could not find the page you are looking for.</main>;
-}
-```
-
-[Back to contents](#contents)
-
 ## Get the current Pathname
 
 - The pathname is the full path including the route, dynamic routes, queries etc.
@@ -64,8 +46,6 @@ import { usePathname } from "next/navigation";
 
 const activePathname = usePathname();
 ```
-
-[Back to contents](#contents)
 
 ## Access the Route
 
@@ -81,8 +61,6 @@ const router = useRouter();
 
 router.push("route"); // go to pushed route.
 ```
-
-[Back to contents](#contents)
 
 ## Access the Params
 
