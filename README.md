@@ -28,3 +28,7 @@ If at any point the notes suggest the creation of a directory or file, it will p
 - [Security](./nextjs/security.md#security)
   - [Cross-origin Sites](./nextjs/security.md#cross-origin-sites)
     - [Images](./nextjs/security.md#for-images)
+
+### Useful Patterns
+
+- [Fetch Wrappers](./nextjs/fetch-wrapper#fetch-wrapper)
