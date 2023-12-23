@@ -33,7 +33,7 @@ If at any point the notes suggest the creation of a directory or file, it will p
 
 - [Fetch Wrappers](./nextjs/fetch-wrapper#fetch-wrapper)
 
-### Other Packages
+# Other Packages
 
 - [Framer Motion](./packages/framer-motion.md#framer-motion)
   - [Motion Elements](./packages/framer-motion.md/#create-a-motion-element)
