@@ -32,3 +32,15 @@ If at any point the notes suggest the creation of a directory or file, it will p
 ### Useful Patterns
 
 - [Fetch Wrappers](./nextjs/fetch-wrapper#fetch-wrapper)
+
+### Other Packages
+
+- [Framer Motion](./packages/framer-motion.md#framer-motion)
+  - [Motion Elements](./packages/framer-motion.md/#create-a-motion-element)
+  - [useScroll Hook](./packages/framer-motion.md/#framer-motion-usescroll-hook)
+  - [useTransform Hook](./packages/framer-motion.md/#usetransform)
+- [Prisma](./packages/prisma.md#prisma)
+  - [Model Creation](./packages/prisma.md#create-model)
+  - [Seeding](./packages/prisma.md/#seed-the-db)
+  - [DB Client File](./packages/prisma.md/#create-db-client-file)
+  - [Access Database](./packages/prisma.md/#access-db)
