@@ -48,3 +48,4 @@ If at any point the notes suggest the creation of a directory or file, it will p
   - [Sort Results](./packages/prisma.md/#sort-results)
   - [Limit Resutls](./packages/prisma.md#limit-results)
   - [Skip Results](./packages/prisma.md#skip-results)
+  - [Number of Results](./packages/prisma.md#number-of-results)
