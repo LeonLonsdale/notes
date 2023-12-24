@@ -167,6 +167,46 @@ const results = await prisma./*model*/.findMany({
 })
 ```
 
+### Limit Results
+
+- If we don't want every result to be returned, we can provide a maximum number of results to return.
+- For this we provide the `take` property.
+
+```ts
+const results = await prisma./*model*/.findMany({
+    where: { key: criteria },
+    orderBy: { date: 'asc' },
+    take: 10, // only get 10 results
+})
+```
+
+### Skip Results
+
+- For pagination purposes, we may want to skip results.
+- For this we pass the `skip` property.
+
+```ts
+const results = await prisma./*model*/.findMany({
+    where: { key: criteria },
+    orderBy: { date: 'asc' },
+    take: 10,
+    skip: 20, // give me 10 results but skip the first 20.
+})
+```
+
+- For pagination, using page numbers in query parameters we could do:
+
+```ts
+const resultLimit = 10;
+// receive the page number from somewhere...
+const results = await prisma./*model*/.findMany({
+    where: { key: criteria },
+    orderBy: { date: 'asc' },
+    take: resultLimit,
+    skip: (page - 1) * resultLimit;
+})
+```
+
 ## Prisma Studio
 
 ```
