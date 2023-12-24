@@ -207,6 +207,15 @@ const results = await prisma./*model*/.findMany({
 })
 ```
 
+### Number of Results
+
+- We can do a slightly different request that returns the number of items that match the criteria.
+
+```ts
+const numResults = prisma./*model*/.count() // total in db
+const numItems = prisma./*model*/.count({ where: { key: criteria }}) // number of matches where the key === the criteria
+```
+
 ## Prisma Studio
 
 ```
