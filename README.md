@@ -19,6 +19,7 @@ If at any point the notes suggest the creation of a directory or file, it will p
   - [Get the current path](./nextjs/route-management.md#get-the-current-pathname)
   - [Access the route](./nextjs/route-management.md#access-the-route)
   - [Access the params](./nextjs/route-management.md#access-the-params)
+  - [Search Params](./nextjs/route-management.md#search-params)
 - [Built-in NextJS Components](./nextjs/nextjs-components.md#built-in-nextjs-components)
   - [Link](./nextjs/nextjs-components.md#the-link-component)
   - [Image](./nextjs/nextjs-components.md#the-image-component)
@@ -45,3 +46,5 @@ If at any point the notes suggest the creation of a directory or file, it will p
   - [DB Client File](./packages/prisma.md/#create-db-client-file)
   - [Access Database](./packages/prisma.md/#access-db)
   - [Sort Results](./packages/prisma.md/#sort-results)
+  - [Limit Resutls](./packages/prisma.md#limit-results)
+  - [Skip Results](./packages/prisma.md#skip-results)
