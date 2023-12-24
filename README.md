@@ -44,3 +44,4 @@ If at any point the notes suggest the creation of a directory or file, it will p
   - [Seeding](./packages/prisma.md/#seed-the-db)
   - [DB Client File](./packages/prisma.md/#create-db-client-file)
   - [Access Database](./packages/prisma.md/#access-db)
+  - [Sort Results](./packages/prisma.md/#sort-results)

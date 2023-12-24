@@ -156,6 +156,17 @@ const results = prisma./*model*/.findMany({ where: { key: undefined }});
 const results = prisma./*model*/.findMany({ where: { key: criteria === 'all' ? undefined : criteria }});
 ```
 
+### Sort Results
+
+- To sort the results, we pass `orderBy` property into the query object.
+
+```ts
+const results = await prisma./*model*/.findMany({
+    where: { key: criteria },
+    orderBy: { date: 'asc' }
+})
+```
+
 ## Prisma Studio
 
 ```
