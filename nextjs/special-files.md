@@ -14,6 +14,17 @@ export default function NotFound() {
 }
 ```
 
+- In some cases, this is not automatic and our code may try to source data and return a result.
+- This will cause an error.
+- NextJS provides us with a `notFound()` function that we can use in such a case.
+- Import this from `next/navigation`
+
+```ts
+if (!data) {
+  return notFound();
+}
+```
+
 ## Loading states
 
 - Create a file called `loading.tsx` in the `app` dir and export your 404 not found component.
