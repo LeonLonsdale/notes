@@ -103,5 +103,9 @@ export default Component({ params, searchParams }: PageProps) { };
 - As this could be undefiend, we need to check for it in our code.
 
 ```ts
-const { page } = searchParams || 1; // allows 0. use ?? to only alow 1+
+const { page = 1 } = searchParams;
+
+// or
+
+const page = Number(searchParams.page) || 1; // does not allow 0. use ?? to allow 0
 ```
