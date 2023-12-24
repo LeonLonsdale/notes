@@ -81,3 +81,27 @@ export default Component({ params }: PageProps) { };
 - In this example, `id` is the param name.
 - This should match the dynamic route directory name.
 - If the directory is `[city]` then replace `id` above with `city`.
+
+## Search Params
+
+- Search Params are also accessible by default as a prop.
+- For example: `domain.com/event/city/page?=1`
+
+```ts
+type PageProps = {
+    params: {
+        id: string; // replace id with the dynamic route name
+    },
+    searchParams: {
+        [key: string]: string | string[] | undefined;
+    }
+};
+
+export default Component({ params, searchParams }: PageProps) { };
+```
+
+- As this could be undefiend, we need to check for it in our code.
+
+```ts
+const { page } = searchParams || 1; // allows 0. use ?? to only alow 1+
+```
