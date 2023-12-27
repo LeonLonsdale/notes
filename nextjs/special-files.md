@@ -37,3 +37,25 @@ export default function Loading() {
   return <div>Loading...</div>;
 }
 ```
+
+## Error Page
+
+- The error page can be used to display errors that we did not catch.
+- The errors occur on the server and are sent to the error page at the front end.
+- The error page must be a `client` component.
+- The component receives the `error` object and a `reset` function by default.
+- The `error` object is stripped of sensitive information before being sent to the frontend.
+- The `reset` function can be used in a button to attempt to retry.
+- The error is of type `Error & { digest?: string}`
+- The reset function is of type `() => void`.
+
+```ts
+type ErrorProps = {
+  error: Error & { digest?: string };
+  reset: () => void;
+};
+
+export default function Error({ error, reset }: ErrorProps) {
+  return <main>// error page</main>;
+}
+```

@@ -26,6 +26,7 @@ If at any point the notes suggest the creation of a directory or file, it will p
 - [Special Files](./nextjs/special-files.md#special-files)
   - [404 Not Found](./nextjs/special-files.md#404-not-found-component)
   - [Loading](./nextjs/special-files.md#loading-states)
+  - [Error](./nextjs/special-files.md#error-page)
 - [Security](./nextjs/security.md#security)
   - [Cross-origin Sites](./nextjs/security.md#cross-origin-sites)
     - [Images](./nextjs/security.md#for-images)
