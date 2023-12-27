@@ -221,3 +221,12 @@ const numItems = prisma./*model*/.count({ where: { key: criteria }}) // number o
 ```
 npx prisma studio
 ```
+
+## Post-install Client Generation for Deployment
+
+- When deploying we need to ensure the target server recreates the prisma client
+- Add a post-install script to package.json
+
+```json
+    "postinstall": "prisma generate"
+```
