@@ -30,6 +30,17 @@ If at any point the notes suggest the creation of a directory or file, it will p
 - [Security](./nextjs/security.md#security)
   - [Cross-origin Sites](./nextjs/security.md#cross-origin-sites)
     - [Images](./nextjs/security.md#for-images)
+  - [Server Only Utilities](./nextjs/security.md#server-only-utilities)
+- [Caching](./nextjs/cache.md#caching)
+  - [unstable_cache](./nextjs/cache.md#unstable_cache)
+- [Middleware](./nextjs/middleware.md#middleware)
+  - [Page Redirects](./nextjs/middleware.md#page-redirect)
+- [Optimisations](./nextjs/optimisations.md#optimisations)
+  - [Generate Static Params](./nextjs/optimisations.md#generate-static-params)
+
+### Extra Features
+
+- [Opengraph Images](./nextjs/extra-features.md#opengraph-images)
 
 ### Useful Patterns
 
@@ -50,3 +61,5 @@ If at any point the notes suggest the creation of a directory or file, it will p
   - [Limit Resutls](./packages/prisma.md#limit-results)
   - [Skip Results](./packages/prisma.md#skip-results)
   - [Number of Results](./packages/prisma.md#number-of-results)
+  - [Deployment Client Generation](./packages/prisma.md#post-install-client-generation-for-deployment)
+- [Zod Validation](./packages/zod.md)
