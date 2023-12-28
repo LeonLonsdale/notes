@@ -1,5 +1,13 @@
 # Contents
 
+## React
+
+- [Server Actions](./react/server-actions.md)
+  - [use server directive](./react/server-actions.md#use-server-directive)
+  - [Security](./react/server-actions.md#security)
+  - [Supported Arguments](./react/server-actions.md#supported-arguments)
+  - [Forms](./react/server-actions.md#server-actions-in-forms)
+
 ## NextJS
 
 Course notes based on learning through `Professional React and Next.JS` - a course produced by [ByteGrad.com](https://bytegrad.com).
@@ -31,6 +39,13 @@ If at any point the notes suggest the creation of a directory or file, it will p
   - [Cross-origin Sites](./nextjs/security.md#cross-origin-sites)
     - [Images](./nextjs/security.md#for-images)
   - [Server Only Utilities](./nextjs/security.md#server-only-utilities)
+- [Server Actions](./nextjs/server-actions-njs.md#server-actions-in-nextjs)
+  - [UI Feedback](./nextjs/server-actions-njs.md#ui-feedback)
+    - [Re-validation](./nextjs/server-actions-njs.md#re-validation)
+    - [Fork Resets](./nextjs/server-actions-njs.md#form-resets)
+    - [Action Status](./nextjs/server-actions-njs.md#status)
+  - [Optimistic Rendering](./nextjs/server-actions-njs.md#optimistic-rendering)
+  - [Error Handling](./nextjs/server-actions-njs.md#error-handling)
 - [Caching](./nextjs/cache.md#caching)
   - [unstable_cache](./nextjs/cache.md#unstable_cache)
 - [Middleware](./nextjs/middleware.md#middleware)
