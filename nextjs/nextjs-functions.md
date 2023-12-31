@@ -9,5 +9,5 @@
 - In server actions, they will invalidate the cache and re-render relevant components in the same request.
 
 ```ts
-revalidatePath(path: string, type?: 'page' | 'layuot'): void;
+revalidatePath(path: string, type?: 'page' | 'layout'): void;
 ```
