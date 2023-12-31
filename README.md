@@ -2,6 +2,10 @@
 
 ## React
 
+- [State Management](./react/state.md#state)
+  - [URL](./react/state.md#url)
+    - [Writing Hash](./react/state.md#write-hash)
+    - [Reading Hash](./react/state.md#read-hash)
 - [Server Actions](./react/server-actions.md)
   - [use server directive](./react/server-actions.md#use-server-directive)
   - [Security](./react/server-actions.md#security)
