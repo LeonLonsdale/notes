@@ -20,6 +20,8 @@ const nextConfig = {
 };
 ```
 
+[Back to Contents](../README.md)
+
 ## Server-only utilities
 
 - Some functions may reveal sensitive information if used on in a client component.
@@ -39,3 +41,5 @@ import "server-only";
 ```
 
 - This will now throw errors if attempting to use any function from this file in a client component.
+
+[Back to Contents](../README.md)

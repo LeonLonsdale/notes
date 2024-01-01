@@ -23,6 +23,8 @@ Add to Settings.json
   }
 ```
 
+[Back to Contents](../README.md)
+
 ## Create Model
 
 - Access `prisma/schema.prisma`
@@ -46,11 +48,15 @@ model ModelName {
 - Models can be used as types.
 - Import from `@prisma/client`
 
+[Back to Contents](../README.md)
+
 ### Push model to DB
 
 ```
 npx prisma db push
 ```
+
+[Back to Contents](../README.md)
 
 ## Seed the DB
 
@@ -67,6 +73,8 @@ npx prisma db push
 ```
 npm i ts-node
 ```
+
+[Back to Contents](../README.md)
 
 ### Create seed file
 
@@ -103,11 +111,15 @@ main()
   });
 ```
 
+[Back to Contents](../README.md)
+
 ### Seed the DB
 
 ```
 npx prisma db seed
 ```
+
+[Back to Contents](../README.md)
 
 ## Create DB Client file
 
@@ -137,6 +149,8 @@ export default prisma;
 if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 ```
 
+[Back to Contents](../README.md)
+
 ## Access DB
 
 ### Get data from db
@@ -156,6 +170,8 @@ const results = prisma./*model*/.findMany({ where: { key: undefined }});
 const results = prisma./*model*/.findMany({ where: { key: criteria === 'all' ? undefined : criteria }});
 ```
 
+[Back to Contents](../README.md)
+
 ### Sort Results
 
 - To sort the results, we pass `orderBy` property into the query object.
@@ -166,6 +182,8 @@ const results = await prisma./*model*/.findMany({
     orderBy: { date: 'asc' }
 })
 ```
+
+[Back to Contents](../README.md)
 
 ### Limit Results
 
@@ -179,6 +197,8 @@ const results = await prisma./*model*/.findMany({
     take: 10, // only get 10 results
 })
 ```
+
+[Back to Contents](../README.md)
 
 ### Skip Results
 
@@ -207,6 +227,8 @@ const results = await prisma./*model*/.findMany({
 })
 ```
 
+[Back to Contents](../README.md)
+
 ### Number of Results
 
 - We can do a slightly different request that returns the number of items that match the criteria.
@@ -215,6 +237,8 @@ const results = await prisma./*model*/.findMany({
 const numResults = prisma./*model*/.count() // total in db
 const numItems = prisma./*model*/.count({ where: { key: criteria }}) // number of matches where the key === the criteria
 ```
+
+[Back to Contents](../README.md)
 
 ## Prisma Studio
 
@@ -230,3 +254,5 @@ npx prisma studio
 ```json
     "postinstall": "prisma generate"
 ```
+
+[Back to Contents](../README.md)

@@ -19,3 +19,5 @@ export const results = unstable_cache(async () => {
   // return stuff
 });
 ```
+
+[Back to Contents](../README.md)

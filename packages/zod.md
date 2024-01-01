@@ -14,6 +14,8 @@ npm i zod
 import { z } from "zod";
 ```
 
+[Back to Contents](../README.md)
+
 ## Example use with page numbers from params:
 
 ```ts
@@ -44,3 +46,5 @@ if (!parsedPageNumber.success) throw new Error("Invalid page number!");
 ```
 
 - If the page number was validated, we can access it on `parsedPageNumber.data`.
+
+[Back to Contents](../README.md)

@@ -37,3 +37,5 @@ export default function Component({ params }: PageProps) {
   const { key } = params;
 }
 ```
+
+[Back to Contents](../README.md)

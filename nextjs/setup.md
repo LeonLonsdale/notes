@@ -13,7 +13,7 @@ Would you like to use App Router? 'Yes'
 Would you like to customise the default import alias (@/*)? 'No'
 ```
 
-[Back to contents](#contents)
+[Back to contents](../README.md)
 
 ## Add Prettier and Prettier for Tailwind and ESLint
 
@@ -88,7 +88,7 @@ Let ESLint know about Prettier in `.eslintrc.json`
 }
 ```
 
-[Back to contents](#contents)
+[Back to Contents](../README.md)
 
 ## Enable WordWrapping and set default formatter in VS Code
 
@@ -111,3 +111,5 @@ In the settings json, add
   "editor.wordWrapColumn": 80
 }
 ```
+
+[Back to Contents](../README.md)

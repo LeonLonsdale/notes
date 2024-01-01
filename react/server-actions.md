@@ -20,10 +20,14 @@
   ```
 - Server actions are designed for server-side state mutations.
 
+[Back to Contents](../README.md)
+
 ## Security
 
 - Arguments passed into server actions are client controlled, so should always be validated.
 - User permissions should always be validated before performing actions.
+
+[Back to Contents](../README.md)
 
 ## Supported Arguments
 
@@ -52,6 +56,8 @@
   - Classes or objects that are instances of classes
   - Unregistered symbols
 
+[Back to Contents](../README.md)
+
 ## Server Actions in Forms
 
 - Passed into the `action` attribute on a form
@@ -65,3 +71,5 @@
 ```ts
 export const serverAction = async (formData: FormData) => {};
 ```
+
+[Back to Contents](../README.md)

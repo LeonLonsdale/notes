@@ -25,6 +25,8 @@ if (!data) {
 }
 ```
 
+[Back to Contents](../README.md)
+
 ## Loading states
 
 - Create a file called `loading.tsx` in the `app` dir and export your 404 not found component.
@@ -37,6 +39,8 @@ export default function Loading() {
   return <div>Loading...</div>;
 }
 ```
+
+[Back to Contents](../README.md)
 
 ## Error Page
 
@@ -59,3 +63,5 @@ export default function Error({ error, reset }: ErrorProps) {
   return <main>// error page</main>;
 }
 ```
+
+[Back to Contents](../README.md)

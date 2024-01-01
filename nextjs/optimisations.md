@@ -17,3 +17,5 @@ export async function generateStaticParams() {
   return [{ team: "lfc" }, { team: "man-city" }];
 }
 ```
+
+[Back to Contents](../README.md)

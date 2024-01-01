@@ -40,3 +40,5 @@ export default async function FetchWrapper (var: string) {
     )
 }
 ```
+
+[Back to Contents](../README.md)

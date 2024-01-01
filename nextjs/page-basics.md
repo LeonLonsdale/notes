@@ -37,3 +37,5 @@ export const generateMetadata = ({ params }: Props): Metadata => {
 ## Favicon
 
 To set your favicon, just put it in the `./src/app/` directory.
+
+[Back to Contents](../README.md)

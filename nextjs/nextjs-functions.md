@@ -11,3 +11,5 @@
 ```ts
 revalidatePath(path: string, type?: 'page' | 'layout'): void;
 ```
+
+[Back to Contents](../README.md)

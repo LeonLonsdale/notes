@@ -18,6 +18,8 @@ experimental: {
   - Optimistic rendering - `useOptimistic()` - imports from `react`
   - Error handling
 
+[Back to Contents](../README.md)
+
 ## UI Feedback
 
 - Since the server actions are async, they may take some time to complete.
@@ -26,6 +28,8 @@ experimental: {
   - Disable a button and / or inputs
 - You may also want to reset a form.
 - Any client interactivity needs to be done in a `client component` file. Refactoring into new client components may therefore be necessary, and the server action can be imported.
+
+[Back to Contents](../README.md)
 
 ### Re-validation
 
@@ -38,6 +42,8 @@ revalidatePath("/");
 ```
 
 - This will then revalidate the data and drop the cache if anything has changed, and re-render any applicable components.
+
+[Back to Contents](../README.md)
 
 ### Form Resets
 
@@ -79,6 +85,8 @@ export default function Form() {
 }
 ```
 
+[Back to Contents](../README.md)
+
 ### Status
 
 - We also have access to a hook that allows us to see the current status of the server action - the pending state.
@@ -114,6 +122,8 @@ export default function Button() {
 }
 ```
 
+[Back to Contents](../README.md)
+
 ## Optimistic Rendering
 
 - For a better user experience, we may wish to render the update right away so the user is not waiting.
@@ -145,8 +155,12 @@ addOptimisticTodo(newTodo);
 - `optimisticTodos` will include `newTodo` even if the server request has not yet finished.
 - We can use this for immediate rendering.
 
+[Back to Contents](../README.md)
+
 ## Error Handling
 
 - As with any server request, the request may fail.
 - We need some way of catching the error and sending feedback to the client.
 - The simplest way to do this is to wrap the body of the server action in a `try`/`catch` block, and return the error to the client.
+
+[Back to Contents](../README.md)

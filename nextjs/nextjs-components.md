@@ -54,3 +54,5 @@ import Image from "next/image";
   quality="{50}"
 />
 ```
+
+[Back to Contents](../README.md)

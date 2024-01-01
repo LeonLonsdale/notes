@@ -18,6 +18,8 @@
             page.tsx
 ```
 
+[Back to Contents](../README.md)
+
 ## Create a Dynamic Route
 
 - A dynamic route is when the text in part of the path may vary
@@ -36,6 +38,8 @@
                 page.tsx
 ```
 
+[Back to Contents](../README.md)
+
 ## Get the current Pathname
 
 - The pathname is the full path including the route, dynamic routes, queries etc.
@@ -46,6 +50,8 @@ import { usePathname } from "next/navigation";
 
 const activePathname = usePathname();
 ```
+
+[Back to Contents](../README.md)
 
 ## Access the Route
 
@@ -61,6 +67,8 @@ const router = useRouter();
 
 router.push("route"); // go to pushed route.
 ```
+
+[Back to Contents](../README.md)
 
 ## Access the Params
 
@@ -81,6 +89,8 @@ export default Component({ params }: PageProps) { };
 - In this example, `id` is the param name.
 - This should match the dynamic route directory name.
 - If the directory is `[city]` then replace `id` above with `city`.
+
+[Back to Contents](../README.md)
 
 ## Search Params
 
@@ -109,3 +119,5 @@ const { page = 1 } = searchParams;
 
 const page = Number(searchParams.page) || 1; // does not allow 0. use ?? to allow 0
 ```
+
+[Back to Contents](../README.md)

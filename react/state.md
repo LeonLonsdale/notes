@@ -11,6 +11,8 @@
 <a href="#12313131313">Click me!</a>
 ```
 
+[Back to Contents](../README.md)
+
 ## Reading from the URL
 
 ### Read Hash
@@ -41,3 +43,5 @@ useEffect(() => {
   return window.removeEventListener("hashchange", handleHashChange);
 }, []);
 ```
+
+[Back to Contents](../README.md)

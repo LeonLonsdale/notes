@@ -31,6 +31,8 @@ const MotionLink = motion(Link);
 
 - In NextJS this does mean that the component we're using this motion component in must be turned into a `client component` as motion uses Reacts `context hook` in the background - and we cannot use react hooks in server components.
 
+[Back to Contents](../README.md)
+
 ## Framer Motion useScroll hook
 
 - The useScroll hook gives us an indicator of how much we have scrolled according to a specified reference point.
@@ -74,6 +76,8 @@ const { scrollYProgress } = useScroll({
 });
 ```
 
+[Back to Contents](../README.md)
+
 ## useTransform()
 
 - Taking our above offsets, we could then use `useTransform` to mape some values and alter how dramatically certain things are done.
@@ -95,3 +99,5 @@ const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 // when Y is at 0, opacity should be 0.3, when Y is at 1, opacity should be 1.
 const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
 ```
+
+[Back to Contents](../README.md)
