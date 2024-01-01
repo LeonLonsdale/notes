@@ -11,6 +11,8 @@
   - [Security](./react/server-actions.md#security)
   - [Supported Arguments](./react/server-actions.md#supported-arguments)
   - [Forms](./react/server-actions.md#server-actions-in-forms)
+- [Performance Optimisations](./react/optimisations.md#optimisations)
+  - [Debouncing](./react/optimisations.md#debouncing)
 
 ## NextJS
 
