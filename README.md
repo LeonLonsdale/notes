@@ -14,6 +14,13 @@
 - [Performance Optimisations](./react/optimisations.md#optimisations)
   - [Debouncing](./react/optimisations.md#debouncing)
 
+## React Packages
+
+- [React Hot Toast](./react/react-packages/react-hot-toast.md#react-hot-toast)
+  - [Positioning](./react/react-packages/react-hot-toast.md#toast-position)
+  - [Triggers](./react/react-packages/react-hot-toast.md#trigger-toast)
+  - [Toast IDs](./react/react-packages/react-hot-toast.md#toast-id)
+
 ## NextJS
 
 Course notes based on learning through `Professional React and Next.JS` - a course produced by [ByteGrad.com](https://bytegrad.com).
