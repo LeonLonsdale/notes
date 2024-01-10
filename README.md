@@ -1,11 +1,27 @@
+# About
+
+All notes are my course notes based on learning through various courses:
+
+**React & NextJS**
+
+- `Professional React and Next.JS` - a course produced by Wesley at [ByteGrad.com](https://bytegrad.com).
+- `The Ultimate React Course 2024` - a course by [Jonas Schmedtmann](https://www.udemy.com/course/the-ultimate-react-course/)
+
 # Contents
 
 ## React
 
+- [Components and Props](#) - ToDo
+- [JSX](#) - ToDo
 - [State Management](./react/state.md#state)
   - [URL](./react/state.md#url)
     - [Writing Hash](./react/state.md#write-hash)
     - [Reading Hash](./react/state.md#read-hash)
+  - [useState()](#) - ToDo
+  - [useReducer()](#) - ToDo
+  - [useContext()](#) - ToDo
+- [Handling Side Effects](#) - ToDo
+- [useRef() for Elements](#) - ToDo
 - [Server Actions](./react/server-actions.md)
   - [use server directive](./react/server-actions.md#use-server-directive)
   - [Security](./react/server-actions.md#security)
@@ -13,6 +29,7 @@
   - [Forms](./react/server-actions.md#server-actions-in-forms)
 - [Performance Optimisations](./react/optimisations.md#optimisations)
   - [Debouncing](./react/optimisations.md#debouncing)
+  - [Memoisation](#) - ToDo
 
 ## React Packages
 
@@ -20,12 +37,21 @@
   - [Positioning](./react/react-packages/react-hot-toast.md#toast-position)
   - [Triggers](./react/react-packages/react-hot-toast.md#trigger-toast)
   - [Toast IDs](./react/react-packages/react-hot-toast.md#toast-id)
+- [React Router](./react/react-packages/react-router.md)
+  - [Creating a Route - the old way](./react/react-packages/react-router-old.md)
+  - [Creating a Route - the new way](./react/react-packages/react-router.md#creating-route)
+  - [Link](./react/react-packages/react-router.md#linking-between-pages)
+  - [NavLink](./react/react-packages/react-router.md#navlink)
+  - [Using the URL](./react/react-packages/react-router.md#storing-state-in-the-url)
+    - [Params](./react/react-packages/react-router.md#params)
+    - [Query String](./react/react-packages/react-router.md#query-string)
+  - [Programmatic Navigation](./react/react-packages/react-router.md#programatic-navigation)
+    - [Imperative - useNavigate()](./react/react-packages/react-router.md#imperative-with-the-usenavigate-hook)
+    - [Declarative - <Navigate />](./react/react-packages/react-router.md#declarative-with-the-navigate--component)
+- [Redux](#) - ToDo
+- [zustand](#) - ToDo
 
 ## NextJS
-
-Course notes based on learning through `Professional React and Next.JS` - a course produced by [ByteGrad.com](https://bytegrad.com).
-
-If at any point the notes suggest the creation of a directory or file, it will provide the terminal command to do so. I use mac, so these commands may be different on other systems.
 
 - [Installation and Setup](./nextjs/setup.md#installation-and-setup)
   - [Installation](./nextjs/setup.md#installation)
