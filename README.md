@@ -48,7 +48,26 @@ All notes are my course notes based on learning through various courses:
   - [Programmatic Navigation](./react/react-packages/react-router.md#programatic-navigation)
     - [Imperative - useNavigate()](./react/react-packages/react-router.md#imperative-with-the-usenavigate-hook)
     - [Declarative - <Navigate />](./react/react-packages/react-router.md#declarative-with-the-navigate--component)
-- [Redux](#) - ToDo
+- [Redux](./react/react-packages/redux.md)
+
+  - [Overview](./react/react-packages/redux.md#overview)
+  - [When to use Redux](./react/react-packages/redux.md#when-should-we-use-redux)
+  - [How it works](./react/react-packages/redux.md#how-does-redux-work)
+  - [Installation](./react/react-packages/redux.md#installation)
+  - [File structures](./react/react-packages/redux.md#file-structures)
+  - [Redux Toolkit](./react/react-packages/redux.md#redux-toolkit)
+    - [Creating a Slice](./react/react-packages/redux.md#create-a-slice)
+    - [Creating a Store](./react/react-packages/redux.md#create-the-store-with-toolkit)
+    - [Connecting store with App](./react/react-packages/redux.md#connecting-the-store-to-the-app)
+    - [Typing state and store](./react/react-packages/redux.md#typing-state-and-store)
+    - [Accessing state](./react/react-packages/redux.md#accessing-state)
+  - [Oldschool Redux](./react/react-packages/redux.md#oldschool-redux)
+    - [Initial State and Reducers](./react/react-packages/redux.md#initial-state--reducers)
+    - [Using multiple reducers](./react/react-packages/redux.md#using-multiple-reducers)
+    - [Creating a store](./react/react-packages/redux.md#create-a-store)
+    - [Dispatch](./react/react-packages/redux.md#dispatch)
+    - [Actions](./react/react-packages/redux.md#actions)
+
 - [zustand](#) - ToDo
 
 ## NextJS
