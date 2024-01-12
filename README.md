@@ -118,6 +118,7 @@ All notes are my course notes based on learning through various courses:
 ### Useful Patterns
 
 - [Fetch Wrappers](./nextjs/fetch-wrapper#fetch-wrapper)
+- [Data Wrappers](#) - Todo
 
 # Other Packages
 
