@@ -286,3 +286,96 @@ export async function loader() {
   return data;
 }
 ```
+
+### Loader default params
+
+- Loader by default gains access to `params`
+
+```ts
+export async function loader({ params }) { ... }
+```
+
+## Writing to or mutating server data
+
+- React Router gives us a `<Form></Form>` component.
+- We pass in the HTML method as a `method` prop (POST, PATCH, or DELETE).
+
+```html
+<form method=""></form>
+```
+
+- We then create an `action` function.
+- The function gets access to the request, and the formData is a property on the response.
+- We can return null, or the new object, or if we need to redirect, we can use the `redirect('url')` method provided by react query.
+
+```ts
+export async function action({ request }) {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+
+  // build the new object if necessary
+  const newObject = {
+    ...data,
+    /* ... */
+  };
+
+  const submittedObject = await submitFunction();
+
+  return redirect(`redirect/url`);
+}
+```
+
+- Then assign the action to the route.
+
+```ts
+// app.tsx / main.tsx
+
+import Component, {
+  loader as componentLoader,
+  action as componentFormAction,
+} from "./Component";
+
+const router = createBrowserRouter([
+  {
+    element: <Layout />,
+    children: [
+      {
+        path: "/component",
+        element: <Component />,
+        loader: componentLoader,
+        action: componentFormAction,
+      },
+    ],
+  },
+]);
+```
+
+- We can additionally perform some error checking and return error messages from the action.
+
+```ts
+export async function action({ request }) {
+  const formData = await request.formData();
+  const data = Object.fromEntries(formData);
+
+  // build the new object if necessary
+  const newObject = {
+    ...data,
+    /* ... */
+  };
+
+  const errors = {};
+  if (/*check*/) errors['prop'] = `Error message`;
+
+  if (Object.keys(errors).length > 0) return errors;
+
+  const submittedObject = await submitFunction();
+
+  return redirect(`redirect/url`);
+}
+```
+
+- Now we can retrieve the error messages within the component using `useActionData()`
+
+```ts
+const formErrors = useActionData();
+```
