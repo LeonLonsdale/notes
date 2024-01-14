@@ -103,6 +103,7 @@ All notes are my course notes based on learning through various courses:
   - [Triggers](./packages/react-hot-toast.md#trigger-toast)
   - [Toast IDs](./packages/react-hot-toast.md#toast-id)
 - [React Router](./packages/react-router.md)
+
   - [Creating a Route - the old way](./packages/react-router-old.md)
   - [Creating a Route - the new way](./packages/react-router.md#creating-route)
   - [Link](./packages/react-router.md#linking-between-pages)
@@ -113,8 +114,8 @@ All notes are my course notes based on learning through various courses:
   - [Programmatic Navigation](./packages/react-router.md#programatic-navigation)
     - [Imperative - useNavigate()](./packages/react-router.md#imperative-with-the-usenavigate-hook)
     - [Declarative - <Navigate />](./packages/react-router.md#declarative-with-the-navigate--component)
-- [Redux](./packages/redux.md)
 
+- [Redux](./packages/redux.md)
   - [Overview](./packages/redux.md#overview)
   - [When to use Redux](./packages/redux.md#when-should-we-use-redux)
   - [How it works](./packages/redux.md#how-does-redux-work)
@@ -122,15 +123,18 @@ All notes are my course notes based on learning through various courses:
   - [File structures](./packages/redux.md#file-structures)
   - [Redux Toolkit](./packages/redux.md#redux-toolkit)
     - [Creating a Slice](./packages/redux.md#create-a-slice)
+    - [Access actions within actions](./packages/redux.md#access-actions-within-actions)
     - [Creating a Store](./packages/redux.md#create-the-store-with-toolkit)
     - [Connecting store with App](./packages/redux.md#connecting-the-store-to-the-app)
     - [Typing state and store](./packages/redux.md#typing-state-and-store)
     - [Accessing state](./packages/redux.md#accessing-state)
+    - [useSelector and Selector Functions](./packages/redux.md#useselector-and-selector-functions)
+    - [Manipulating State](./packages/redux.md#manipulating-state)
+    - [Thunks](./packages/redux.md#redux-thunk)
   - [Oldschool Redux](./packages/redux.md#oldschool-redux)
     - [Initial State and Reducers](./packages/redux.md#initial-state--reducers)
     - [Using multiple reducers](./packages/redux.md#using-multiple-reducers)
     - [Creating a store](./packages/redux.md#create-a-store)
     - [Dispatch](./packages/redux.md#dispatch)
     - [Actions](./packages/redux.md#actions)
-
 - [zustand](#) - ToDo

@@ -63,7 +63,7 @@ import { createSlice } from `@reduxjs/toolkit`
 
 - Use the function and store its output.
 - It accepts an object as an argument, with properties `name`, `initialState`, and `reducers`.
-- The `reducers` property should be an object containing reducer functions.
+- The `reducers` property should be an object containing functions that will be used to create action creators.
 - Reducer functions gain access to `state` and `action`.
 
 ```ts
@@ -98,6 +98,22 @@ export const { updateUser, deleteUser, addUser } = userSlice.actions;
 ```
 
 - These action creators would automatically use the action types: `users/addUser`, `users/deleteUser`, and `users/updateUser`.
+
+### Access actions within actions
+
+- When writing the functions within the reducers property of our slice, we may need to access other functions.
+- For example, an action for decreasing the quantity of an item will eventually reach 0. At that point we may want to delete the item entirely - access the delete action.
+- We do this will `mySlice.caseReducers` which gives us access to the other functions.
+
+```ts
+decreaseQuantity(state, action) {
+  const item = state.cart.find((item) => item.id === action.payload);
+  if (!item) return;
+  item.quantity--;
+
+  if (item.quantity === 0) mySlice.caseReducers.deleteItem(state, action);
+}
+```
 
 ### Create the store with toolkit
 
@@ -197,87 +213,137 @@ export default function Username() {
 }
 ```
 
-## Oldschool Redux
+### useSelector and selector functions
 
-### Initial State & Reducers
+- In reality, what the `useSelector` hook receives is actually known as a `selector function`
+- The recommendation is that these functions are written and exported from the slice file.
+  - This means we have only a single place to edit if we change the shape of our state.
+- It is a naming convention to start selector function names with `get`.
+- For example:
 
-Initial State and Reducer functions are set up in the very same way as they would be with useReducer. The only difference here is that it is convention to only return the current state, and not throw an error, in the switch default.
+```ts
+// in slice file
+const getUsername = (state) => state.user.username;
 
-```js
-const initialState = {
-  properties: values,
-};
+// component file that needs access to the username
+const username = useSelector(getUsername);
+```
 
-function reducer(state = initialState, action) {
-  switch (action.type) {
-    // cases
-    default:
-      return state;
-  }
+- Also true of more complex selector functions:
+
+```ts
+// cart slice file
+
+const getTotalItemsInCart = (state) =>
+  state.cart.cart.reduce((sum, item) => sum + item.quantity);
+const getTotalPriceOfCart = (state) =>
+  state.cart.cart.reduce((sum, item) => sum + item.unitPrice * item.quantity);
+
+// in component file that needs access to the information
+
+const cartNumItems = useSelector(getTotalItemsInCart);
+const cartTotalPrice = useSelector(getTotalPriceOfCart);
+```
+
+- If, when calling the selector function we need to pass in an argument, our selector function should become a higher-order function: it should return a function.
+- In the example below:
+  - We need to get the quantity value from within the item object
+  - We therefore need to pass in the id of the item needed.
+  - With the id passed in, it returns the selector function which now has access to the id via closure.
+  - The returned function is `(state) =>
+state.cart.cart.find((item) => item.id === id).quantity ?? 0`
+
+```ts
+const getNumCurrentItem = (id) => (state) =>
+  state.cart.cart.find((item) => item.id === id).quantity ?? 0;
+
+// when calling:
+
+const numCurrentItem = useSelector(getNumCurrentItem(id));
+```
+
+### Manipulating State
+
+- We can manipulate state using a combination of `dispatch` and our `action creators`.
+- Dispatch is created using the react-redux hook `useDispatch()`
+- The hook returns a dispatch function that we can store.
+- We pass our action creator in, along with the intended payload, as an argument.
+
+```ts
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+
+export default function MyComponent() {
+  const [name, setName] = useState();
+  const dispatch = useDispatch();
+
+  const handleUpdateName = () => {
+    dispatch(updateName(name));
+  };
+
+  return (
+    <form>
+      <input
+        type="text"
+        onChange={(e) => setName(e.target.value)}
+        value={name}
+      />
+      <button onClick={handleUpdateName}>Update name</button>
+    </form>
+  );
 }
 ```
 
-### Using multiple reducers
+# Redux Thunk
 
-To use multiple reducers, we need to combine them into a rootReducer using a built in redux function. This needs to be imported.
+- A middleware that sits between the dispatch and the reducer
+- Does something with the dispatched action before it reaches the store
+- Most commonly used for async actions.
+- `createAsyncThunk()` ->
+  - Accepts action type as first arg
+  - Accepts async fn as second arg which outputs the payload
 
-```js
-import { combineReducers } from "redux";
-```
-
-When using the function, we pass in an object, and each object property represents a reducer, so give them meaningful names. We should save the output - conventionally as `rootReducer`.
-
-```js
-const rootReducer = combineReducers({
-  account: accountReducer,
-  customer: customerReducer,
+```ts
+export const myThunk = createAsyncThunk("user/fetchAddress", async () => {
+  // do stuff
+  return { payload };
 });
 ```
 
-### Create a Store
+- Produces 3 additional actions types for: pending, resolved, rejected (promise)
+- Handle these additional action types in the `slice` under the property `extraReducers`.
+- `extraReducers` is a function that has access to a `builder` object by default.
+- The `builder` object exposes an `addCase` function which accepts the action type and an action function.
+- `addCase` can be chained.
 
-To create a store we need to import the createStore function from Redux.
-
-```js
-import { createStore } from "redux";
+```ts
+export const userSlice = createSlice({
+    name: 'user',
+    initialState,
+    reducers: {
+        action(state, action) { /* do stuff */ },
+    },
+    extraReducers (builder) => builder
+        .addCase(myThunk.pending, (state, action) { /* do stuff */ })
+        .addCase(myThunk.fulfilled, (state, action) { /* do stuff */ })
+        .addCase(myThunk.rejected, (state, action) { /* do stuff */ })
+});
 ```
 
-Note: this function is deprecated, but is left in the package for learning purposes.
+- These are dispatched in the same way as other actions. However, there may be type problems with TypeScript
+- By default, our dispatch function expects an arg of type `UnknownAction` but the thunk is type `AsyncThunkAction`
+- To avoid this we can create `useAppDispatch` and export from ouore store file:
 
-Calling this function returns the store object which can be saved. When calling, we pass in the rootReducer function.
+```ts
+// from your store.ts file
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
-```js
-const store = createStore(rootReducer);
-```
+// from hooks.ts file
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import type { RootState, AppDispatch } from "../store";
 
-our `store` object now has access to the following methods.
-
-```js
-store.dispatch(); // dispatch an action, like useReducer
-store.getState(); // return the current state
-```
-
-### Dispatch
-
-The dispatch method works in a similar way to dispatches with useReducer - we pass in an action. This can either be an `action object` or an `action creator function`.
-
-```js
-store.dispatch({ type: "theType", payload: "theValue" });
-
-// or
-
-store.dispatch(actionCreator());
-```
-
-### Actions
-
-Since a store will typically contain multiple reducers - one for each app feature - it is convention to begin our action type names with the feature name, followed by the accion to be performed.
-
-The payload can also be an object of multiple values.
-
-```js
-{ type: 'account/deposit', payload: amount }
-{ type: 'account/withdraw', payload: amount }
-{ type: 'user/updateEmail', payload: { oldEmail, newEmail } }
-{ type: 'user/updateName', payload: { newName } }
+type DispatchFunc = () => AppDispatch;
+export const useAppDispatch: DispatchFunc = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 ```
